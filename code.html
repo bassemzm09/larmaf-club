@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الاتحاد الإسلامي لحي لارماف</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            direction: rtl;
+            text-align: center;
+            background-color: #001f3f; /* Deep blue background */
+            color: #ffffff; /* White text */
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            background: #003366; /* Lighter blue container */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.5); /* Red shadow */
+        }
+
+        .container > * {
+            margin-bottom: 20px;
+        }
+
+        h1, h2 {
+            color: #ffcc00; /* Golden yellow headings */
+        }
+
+        .logo {
+            width: 150px;
+            height: auto;
+            margin: 20px auto;
+            display: block;
+        }
+
+        .stadium {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 68 / 90; /* Adjusted aspect ratio to make it less tall */
+            background: url('https://www.transparenttextures.com/patterns/grass-pattern.png'), linear-gradient(to bottom, #228B22, #006400); /* Grass texture and gradient */
+            border: 5px solid #ff0000; /* Red border */
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .stadium {
+            aspect-ratio: 68 / 50; /* Adjusted aspect ratio to make it less tall */
+        }
+        .card {
+            width: 100px; /* تصغير حجم البطاقة */
+            background-color: white;
+            border: 2px solid #FFD700; /* Gold border */
+            box-shadow: 0 0 10px rgba(34, 139, 34, 0.5); /* Green shadow */
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+            position: absolute;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.1);
+        }
+
+        .card img {
+            width: 80px; /* تصغير حجم الصورة */
+            height: 80px;
+            border-radius: 10px;
+            border: 2px solid #ffffff;
+        }
+
+        .card span {
+            display: block;
+            font-weight: bold;
+            color: #006400; /* Dark green text */
+            margin-top: 5px;
+            font-size: 14px; /* تصغير حجم الخط */
+        }
+
+        .substitutes {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .substitutes .card {
+            position: relative;
+            margin: 10px;
+        }
+
+        .best-players li {
+            max-width: 300px;
+            margin: 10px auto;
+            padding: 10px;
+            background: #004080; /* Medium blue */
+            border-radius: 5px;
+        }
+
+        .history {
+            padding: 20px;
+            background: #004080;
+            border-radius: 10px;
+        }
+
+        .social-links a {
+            color: #ffcc00;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 18px;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+            text-align: right;
+        }
+
+        .close {
+            color: #aaa;
+            float: left;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+            }
+            .stadium {
+                height: 400px; /* Override aspect-ratio for smaller screens */
+            }
+            .card {
+                width: 80px;
+            }
+            .card img {
+                width: 60px;
+                height: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img class="logo" src="logo1.webp" alt="شعار الفريق">
+        <h1>الاتحاد الإسلامي لحي لارماف</h1>
+        <p>فريق كرة قدم يتكون من 6 لاعبين.</p>
+        
+        <h2>الملعب</h2>
+        <div class="stadium">
+            <!-- حارس المرمى في الجزء السفلي -->
+            <div class="card" style="top: 82%; left: 50%; transform: translateX(-50%);" data-info="إسحاق - حارس مرمى">
+                <img src="ishak.jpg" alt="إسحاق">
+                <span>إسحاق</span>
+            </div>
+            <!-- المدافعين -->
+            <div class="card" style="top: 68%; left: 20%;" data-info="باسم زموري - مدافع">
+                <img src="bassem.jpg" alt="باسم زموري">
+                <span>باسم زموري</span>
+            </div>
+            <div class="card" style="top: 68%; left: 70%;" data-info="محمد النغليز - مدافع">
+                <img src="naghngh.jpg" alt="محمد النغليز">
+                <span>محمد النغليز</span>
+            </div>
+            <!-- لاعبي الوسط -->
+            <div class="card" style="top: 35%; left: 44%;" data-info="سعيد هني - لاعب وسط">
+                <img src="said.jpg" alt="سعيد هني">
+                <span>سعيد هني</span>
+            </div>
+            <div class="card" style="top: 55%; left: 44%;" data-info="رؤوف عتابة - لاعب وسط">
+                <img src="raouf1.jpg" alt="رؤوف عتابة">
+                <span>رؤوف عتابة</span>
+            </div>
+            <!-- المهاجمين -->
+            <div class="card" style="top: 10%; left: 30%;" data-info="رفيق بن بلعيد - مهاجم">
+                <img src="rafik 1.jpg" alt="رفيق بن بلعيد">
+                <span>رفيق بن بلعيد</span>
+            </div>
+            <div class="card" style="top: 10%; left: 60%;" data-info="عثمان جعرون - مهاجم">
+                <img src="nano.jpg" alt="عثمان جعرون">
+                <span>عثمان جعرون</span>
+            </div>
+        </div>
+        
+        <h2>الاحتياطيون</h2>
+        <div class="substitutes">
+            <!-- تمت إزالة رؤوف عتابة من هنا -->
+        </div>
+        
+        <h2>أفضل اللاعبين</h2>
+        <ul class="best-players">
+            <li><strong>أفضل حارس:</strong> إسحاق</li>
+            <li><strong>أفضل مدافع:</strong> باسم زموري</li>
+            <li><strong>أفضل مهاجم:</strong> رفيق بن بلعيد</li>
+            <li><strong> الهداف التاريخي للنادي:</strong> سعيد هني</li>
+        </ul>
+        
+        <h2>تاريخ الفريق</h2>
+        <div class="history">
+            <p>تأسس الاتحاد الإسلامي لحي لارماف في عام 1990. منذ ذلك الحين، حقق الفريق العديد من الإنجازات، بما في ذلك الفوز بالبطولة المحلية ثلاث مرات. يمكن إضافة صور أو فيديوهات للمباريات السابقة هنا.</p>
+        </div>
+        
+        <div class="social-links">
+            <a href="#">فيسبوك</a>
+            <a href="#">تويتر</a>
+            <a href="#">إنستغرام</a>
+        </div>
+    </div>
+    
+    <!-- Modal for player info -->
+    <div id="playerModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p id="playerInfo"></p>
+        </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            var modal = $('#playerModal');
+            var span = $('.close');
+
+            $('.card').on('click', function() {
+                var info = $(this).data('info');
+                $('#playerInfo').text(info);
+                modal.css('display', 'block');
+            });
+
+            span.on('click', function() {
+                modal.css('display', 'none');
+            });
+
+            $(window).on('click', function(event) {
+                if (event.target == modal[0]) {
+                    modal.css('display', 'none');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
